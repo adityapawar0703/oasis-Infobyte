@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f7;
+        }
+
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1d1d1f;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            color: #86868b;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #d2d2d7;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .result {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #f5f5f7;
+            border-radius: 0.5rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem;
+            background-color: #007AFF;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #0066CC;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Temperature Converter</h1>
+        <div class="input-group">
+            <label for="degrees">Degrees</label>
+            <input type="number" id="degrees" placeholder="Enter temperature">
+        </div>
+        <div class="input-group">
+            <label for="type">Type</label>
+            <select id="type">
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="celsius">Celsius</option>
+                <option value="kelvin">Kelvin</option>
+            </select>
+        </div>
+        <button onclick="convertTemperature()">Convert</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function convertTemperature() {
+            const degrees = parseFloat(document.getElementById('degrees').value);
+            const type = document.getElementById('type').value;
+            const resultDiv = document.getElementById('result');
+            
+            if (isNaN(degrees)) {
+                resultDiv.textContent = 'Please enter a valid number';
+                return;
+            }
+
+            let celsius, fahrenheit, kelvin;
+
+            switch(type) {
+                case 'fahrenheit':
+                    fahrenheit = degrees;
+                    celsius = (degrees - 32) * 5/9;
+                    kelvin = (degrees - 32) * 5/9 + 273.15;
+                    break;
+                case 'celsius':
+                    celsius = degrees;
+                    fahrenheit = (degrees * 9/5) + 32;
+                    kelvin = degrees + 273.15;
+                    break;
+                case 'kelvin':
+                    kelvin = degrees;
+                    celsius = degrees - 273.15;
+                    fahrenheit = (degrees - 273.15) * 9/5 + 32;
+                    break;
+            }
+
+            resultDiv.textContent = `
+                ${degrees}° ${type.charAt(0).toUpperCase() + type.slice(1)} is equal to:
+                ${fahrenheit.toFixed(2)}° Fahrenheit
+                ${celsius.toFixed(2)}° Celsius
+                ${kelvin.toFixed(2)}° Kelvin
+            `;
+        }
+    </script>
+</body>
+</html>
