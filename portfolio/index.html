@@ -485,7 +485,7 @@
         </style>
     </section>
 
-    <!-- <section id="contact">
+ <section id="contact">
         <h2 class="section-title">Contact Me</h2>
         <div class="contact-container">
             <div class="contact-info">
@@ -508,100 +508,6 @@
             </div>
         </div>
         <style>
-            .contact-container {
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 2rem;
-                background: #ffffff;
-                border-radius: 20px;
-                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            }
-
-            .contact-info {
-                display: flex;
-                flex-direction: column;
-                gap: 2rem;
-                padding: 2rem;
-            }
-
-            .contact-item {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-                padding: 1rem;
-                background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-                border-radius: 15px;
-                transition: transform 0.3s ease;
-            }
-
-            .contact-item:hover {
-                transform: translateY(-5px);
-            }
-
-            .contact-item i {
-                font-size: 1.5rem;
-                color: #007bff;
-            }
-
-            .contact-item p {
-                margin: 0;
-                font-size: 1.1rem;
-                color: #2d3436;
-            }
-
-            .contact-item a {
-                color: #007bff;
-                text-decoration: none;
-                transition: color 0.3s ease;
-            }
-
-            .contact-item a:hover {
-                color: #0056b3;
-            }
-
-            @media (max-width: 768px) {
-                .contact-container {
-                    padding: 1rem;
-                }
-
-                .contact-info {
-                    padding: 1rem;
-                }
-
-                .contact-item {
-                    padding: 0.8rem;
-                }
-
-                .contact-item p {
-                    font-size: 1rem;
-                }
-            }
-        </style>
-    </section> -->
-    <section id="contact">
-        <h2 class="section-title">Contact Me</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <p>Email: <a href="mailto:adityapawar0703@gmail.com">adityapawar0703@gmail.com</a></p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <p>Phone: +91 62XXXXXX03</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <p>LinkedIn: <a href="https://in.linkedin.com/in/aditya-pawar-b654b629a" target="_blank">linkedin.com/in/aditya-pawar-b654b629a</a></p>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <p>GitHub: <a href="https://github.com/adityapawar0703" target="_blank">github.com/adityapawar0703</a></p>
-                </div>
-            </div>
-        </div>
-        <style>
-            /* General Section Styling */
             #contact {
                 padding: 4rem 2rem;
                 background: #f7f9fc;
@@ -615,7 +521,7 @@
                 color: #333;
             }
     
-            /* Contact Container Styling */
+          
             .contact-container {
                 max-width: 900px;
                 margin: 0 auto;
@@ -638,7 +544,7 @@
                 }
             }
     
-            /* Contact Item Styling */
+          
             .contact-item {
                 display: flex;
                 align-items: center;
@@ -655,13 +561,13 @@
                 box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
             }
     
-            /* Icon Styling */
+          
             .contact-item i {
                 font-size: 1.8rem;
                 color: #007bff;
             }
     
-            /* Text Styling */
+          
             .contact-item p {
                 margin: 0;
                 font-size: 1.1rem;
@@ -679,7 +585,7 @@
                 color: #0056b3;
             }
     
-            /* Mobile Responsiveness */
+          
             @media (max-width: 768px) {
                 #contact {
                     padding: 3rem 1rem;
@@ -705,7 +611,7 @@
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
-        // Home section animations
+       
         gsap.to(".profile-image", {
             opacity: 1,
             x: 0,
@@ -732,7 +638,7 @@
             }
         });
 
-        // About section animation
+       
         gsap.to("#about", {
             opacity: 1,
             y: 0,
@@ -746,7 +652,7 @@
             }
         });
 
-        // Projects section animation
+       
         gsap.to("#projects", {
             opacity: 1,
             y: 0,
@@ -760,7 +666,7 @@
             }
         });
 
-        // Contact section animation
+       
         gsap.to("#contact", {
             opacity: 1,
             y: 0,
